@@ -1,0 +1,177 @@
+$colorMenu: $kuler-secondary;
+$fast: 0.3s;
+$slow: 0.4s;
+
+$bar-w: 36px;
+$bar-o: $bar-w /3.3;
+$bar-h: 2px;
+$bar-short-o: $bar-w /3.3;
+
+.menu{
+  -webkit-box-shadow: 3px 3px 10px -2px rgba(0,0,0,0.3);
+  -moz-box-shadow: 3px 3px 10px -2px rgba(0,0,0,0.3);
+  box-shadow: 3px 3px 10px -2px rgba(0,0,0,0.3);
+  
+  width: 200px;
+  position:fixed;
+  right:-300px;
+  top:0px;
+  z-index: $menuZ;
+  background: white;
+  border-left: 2px solid $kuler-primary;
+  @extend .ease;
+  &.--active{
+    right:0px;
+  }
+}
+
+.menu__logo{
+  margin: 0 auto;
+  width: 35px;
+  display: block;
+  margin-top: 50px;
+
+  img {
+    position: relative;
+    top:-12px;
+    width:30px;
+  }
+}
+
+ul.menu__list {
+  margin:0px;
+  padding:0px;
+  height:700px;
+  li{
+    list-style: none;
+    display:block;
+    .fa {
+      padding-right:10px;
+      line-height: 30px;
+      position: relative;
+      right: 20px;
+    }
+    a{
+      display:block;
+      cursor:pointer;
+      text-align:left;
+      padding:10px 10px;
+      margin-top:10px;
+      margin-left:10px;
+      margin-right:10px;
+      border-radius:4px;
+      color: $kuler-secondary;
+      text-decoration:none !important;
+      display:block;
+      text-align:center;
+      border: 2px solid white;
+      background-color:white;
+      &:hover{
+        border: 2px solid $kuler-secondary;
+        color:$kuler-secondary;
+      }
+    }
+  }
+}
+
+.btn-update{
+  position: absolute !important;
+  right:320px;
+  top:15px;
+  z-index:$menuButtonZ;
+  height:700px;
+  &.--active{
+    right: 215px;
+  }
+}
+
+@include keyframes(remove-line-after) {
+  0%   { width: $bar-short-o; top:0px; }
+  50%   { width: 20px; top:-7px; }
+  100% { width: 0px; top:-20px;}
+}
+
+@include keyframes(remove-line-before) {
+  0%   { width: $bar-short-o; top:0px; }
+  50%  { width: 20px; top:-7px; }
+  75% { width: 10px; top:0px; }
+  100% { width: 0px; top:-20px;}
+}
+
+.menu-btn {
+  position:relative;
+  top:7px;
+  display: inline-block;
+  position: relative;
+  width: $bar-w;
+  height:40px;
+  cursor: pointer;
+  padding: 0;
+  @extend .btn-update;
+}
+
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+  @include transition($fast);
+  background-color: $colorMenu;
+  width: $bar-w;
+  height: $bar-h;
+}
+
+.menu-btn span {
+  position: relative;
+  display: inline-block;
+  margin-top: $bar-o;
+  
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+  }
+  &:before {
+    top: -$bar-o;
+  }
+  &:after {
+    top: $bar-o;
+  }
+}
+
+
+.menu-btn.--active span 
+{
+  background-color: transparent;
+  &:before,
+  &:after {
+    top: 0;
+  }
+  &:before {
+    @include rotate(-135deg);
+  }
+  &:after {
+    @include rotate(135deg);
+  }
+}
+
+.hide{
+  display:none;
+}
+
+.show{
+  display:block;
+}
+
+.overlay{
+  position: absolute;
+  top:0px;
+  left:0px;
+  width:100%;
+  min-height:700px;
+  background: rgba(0,0,0,0.5);
+  height:100%;
+  display:block;
+  // z-index === variable
+  z-index:$overlayZ;
+  content: " ";
+}

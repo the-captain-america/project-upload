@@ -1,0 +1,28 @@
+.content{
+  padding:20px;
+  display: inline-block;
+  padding-bottom: 50px;
+  border-radius: 4px;
+  width:100%;
+  &.--styled {
+    border:1px solid $kuler-shade-light;
+  }
+  p{
+    line-height: 25px;
+    color: #8F8F8F;
+    text-align: center;
+  }
+  h1{
+    font-size: 26px;
+    text-align: center;
+    color: #636363;
+    text-transform: uppercase;
+  }
+  .sline{
+    position: relative;
+    top:-6px;
+    width:50px;
+    height:2px;
+    background:$kuler-primary;
+  }
+}

@@ -1,0 +1,41 @@
+
+.upload__container {
+ @extend .flex__container;
+ justify-content: center;
+ .upload__preview{
+   @extend .shadow-drop;
+   height: 80px;
+   width: 100px;
+   border: 2px solid $kuler-primary;
+   background:white;
+   border-radius:4px;
+   margin: 5px;
+   margin-top:20px;
+   margin-bottom:20px;
+   padding:10px;
+   img {
+     width:100%;
+   }
+   &:hover{
+     button.upload__remove{
+       opacity:1;
+       color:white;
+     }
+   }
+   button.upload__remove {
+     position:relative;
+     z-index:999;
+     left:0px;
+     top:-97px;
+     cursor:pointer;
+     color:$kuler-font;
+     background:$kuler-primary;
+     border-radius:3px;
+         border-bottom-right-radius: 0px;
+         border-bottom-left-radius: 0px;
+     @extend .ease;
+     border:none;
+     opacity:0;
+   }
+ }
+}

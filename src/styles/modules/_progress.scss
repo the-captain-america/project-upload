@@ -1,0 +1,25 @@
+.progress-container{
+  height:10px;
+  width:100%;
+  margin-bottom:30px;
+  .progress-bar{
+    background:$kuler-primary;
+    position:relative;
+    &.active{
+      display:none;
+    }
+    &.active{
+      display:block;
+      &:before{
+        position:absolute;
+        content: '';
+        top:-8px;
+        width:20px;
+        border-radius:50%;
+        height:20px;
+        background-color:$kuler-primary;
+        right:-10px;
+      }
+    }
+  }
+}

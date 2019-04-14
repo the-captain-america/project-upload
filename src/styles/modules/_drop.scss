@@ -1,0 +1,9 @@
+.drop {
+  @extend .flex__container;
+  justify-content: center;
+  margin-top:100px;
+  .drop__description {
+    text-align: center;
+    padding-top:20px;
+  }
+}

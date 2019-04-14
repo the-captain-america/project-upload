@@ -1,0 +1,35 @@
+.login {
+  @extend .flex__container;
+  justify-content: center;
+  border:1px solid $kuler-shade-light;
+  padding:20px;
+  @extend .shadow-drop;
+  margin-top: 100px !important;
+  // background:green;
+  @include MQ(XSM) {
+    background:red !important;
+  }
+  margin: 0 auto;
+}
+
+@include MQ($M) {
+  .login {
+    background-color:red !important;
+  }
+}
+@include MQ($SM) {
+  .login {
+    background-color:yellow !important;
+  }
+}
+@include MQ($S) {
+  .login {
+    background-color:yellow !important;
+  }
+}
+
+@include MQ($XSM) {
+  .login {
+    background-color: green !important;
+  }
+}

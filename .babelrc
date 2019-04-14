@@ -1,0 +1,17 @@
+{
+  "presets": [
+    "env",
+    "react",
+    ["es2015", { "modules": false }],
+    "flow"
+  ],
+  "plugins": [
+    "transform-runtime",
+    ["module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "containers": "/containers"
+      }
+    }]
+  ]
+}

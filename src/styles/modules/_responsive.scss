@@ -1,0 +1,40 @@
+/* Media Queries */
+$XSM : 320px;
+$XS : 320px;
+$S : 480px;
+$SM : 480px;
+$M : 768px;
+$L : 1170px;
+
+@mixin MQ($canvas) {
+    @if $canvas==XS {
+        @media only screen and (min-width: $XS) {
+            @content;
+        }
+    }
+    @if $canvas==XSM {
+        @media only screen and (max-width: $XS) {
+            @content;
+        }
+    }
+    @if $canvas==S {
+        @media only screen and (min-width: $S) {
+            @content;
+        }
+    }
+    @if $canvas==SM {
+        @media only screen and (max-width: $SM) {
+            @content;
+        }
+    }
+    @else if $canvas==M {
+        @media only screen and (min-width: $M) {
+            @content;
+        }
+    }
+    @else if $canvas==L {
+        @media only screen and (min-width: $L) {
+            @content;
+        }
+    }
+}

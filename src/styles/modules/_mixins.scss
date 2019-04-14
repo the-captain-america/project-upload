@@ -1,0 +1,40 @@
+@mixin transition-time($time,
+$effect) {
+    transition: all $time $effect;
+    -webkit-transition: all $time $effect;
+    -moz-transition: all $time $effect;
+    -o-transition: all $time $effect;
+    -ms-transition: all $time $effect;
+}
+
+@mixin rotate ($deg){
+    transform: rotate($deg);
+    -webkit-transform: rotate($deg);
+    -moz-transform: rotate($deg);
+    -o-transform: rotate($deg);
+    -ms-transform: rotate($deg);
+  }
+  
+  @mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+@mixin transition($time) {
+    transition:           all $time ease-in-out;
+    -webkit-transition:   all $time ease-in-out;
+    -moz-transition:      all $time ease-in-out;
+    -o-transition:        all $time ease-in-out;
+    -ms-transition:       all $time ease-in-out; 
+  }
+  

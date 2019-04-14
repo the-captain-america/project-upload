@@ -1,0 +1,32 @@
+.ease {
+  @include transition-time(300ms,
+  ease-in-out);
+}
+
+.shadow-button {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+}
+
+.shadow-drop {
+  -webkit-box-shadow: 2px 3px 11px 1px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 2px 3px 11px 1px rgba(0, 0, 0, 0.08);
+  box-shadow: 2px 3px 11px 1px rgba(0, 0, 0, 0.08);
+}
+
+.ease {
+  -webkit-transition: 300ms ease-in-out all;
+  transition: 300ms ease-in-out all;
+}
+
+.input__transition {
+  -webkit-transition: border 0.3s;
+  -moz-transition: border 0.3s;
+  transition: border 0.3s;
+}
+
+.flex__container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
